@@ -137,12 +137,20 @@ $customer2->setPhoneNumber('111 111 111');
 print_pre($customer1);
 print_pre($customer2);
 
-$customer1->makeDeposit(100);
+try {
+    $customer1->makeDeposit(100);
+} catch (Exception $e) {
+    echo $e->getMessage() . PHP_EOL;
+}
 
 print_pre($customer1);
 print_pre($customer2);
 
-$customer1->payment(60);
+try {
+    $customer1->payment(60);
+} catch (Exception $e) {
+    echo $e->getMessage() . PHP_EOL;
+}
 
 print_pre($customer1);
 print_pre($customer2);
